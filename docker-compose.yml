@@ -1,10 +1,10 @@
 services:
   samba:
     image: dockurr/samba
-    container_name: sambashare
+    container_name: ${SAMBA_SHARE_CONTAINER_NAME}
     network_mode: bridge
     environment:
-      NAME: "${SAMBA_SHARE_NAME}"
+      NAME: "${SAMBA_SHARE_NETWORK_NAME}"
       USER: "${SAMBA_SHARE_USER}"
       PASS: "${SAMBA_SHARE_PASS}"
       TZ: ${SAMBA_SHARE_TZ}
