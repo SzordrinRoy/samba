@@ -4,6 +4,7 @@ services:
     container_name: sambashare
     network_mode: bridge
     environment:
+      SAMBA_SHARE_NAME: ${SAMBA_SHARE_NAME}
       NAME: "${SAMBA_SHARE_NAME}"
       USER: "${SAMBA_SHARE_USER}"
       PASS: "${SAMBA_SHARE_PASS}"
