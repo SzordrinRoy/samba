@@ -1,0 +1,14 @@
+services:
+  samba:
+    image: dockurr/samba
+    container_name: sambashare
+    network_mode: bridge
+    environment:
+      NAME: "${SAMBA_SHARE_NAME}"
+      USER: "${SAMBA_SHARE_USER}"
+      PASS: "${SAMBA_SHARE_PASS}"
+    ports:
+      - 445:445
+    volumes:
+      - ${SAMBA_SHARE_PATH}:/storage
+    restart: unless-stopped
