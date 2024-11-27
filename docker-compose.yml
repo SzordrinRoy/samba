@@ -7,6 +7,7 @@ services:
       NAME: "${SAMBA_SHARE_NAME}"
       USER: "${SAMBA_SHARE_USER}"
       PASS: "${SAMBA_SHARE_PASS}"
+      TZ: ${SAMBA_SHARE_TZ}
     ports:
       - 445:445
     volumes:
