@@ -12,5 +12,8 @@ services:
       - 445:445
     volumes:
       - ${SHARE_PATH}:/storage
-      - ${CONFIG_PATH}/${CONTAINER_NAME}/smb.conf:/etc/samba/smb.conf
+      - type: bind
+        source: ${CONFIG_PATH}/${CONTAINER_NAME}/smb.conf
+        target: /etc/samba/smb.conf
+        read_only: true
     restart: unless-stopped
